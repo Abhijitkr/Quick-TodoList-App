@@ -56,6 +56,12 @@ section ul li{
     display: flex;
 }
 
+section ul li:hover{
+    border: 2px solid #45CFDD;
+    transform: scale(1);
+    cursor: pointer;
+}
+
 li::before{
     content: "";
     background-image: url('/images/unchecked.png');
@@ -63,4 +69,13 @@ li::before{
     width: 20px;
     height: 20px;
     margin-right: 10px;
+}
+
+li.checked{
+    text-decoration: line-through;
+}
+
+li.checked::before{
+    background-image: url('/images/checked.png');
+    filter: hue-rotate(180deg);
 }
