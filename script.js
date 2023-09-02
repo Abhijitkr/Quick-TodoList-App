@@ -6,10 +6,17 @@ button.addEventListener('click', e => {
     e.preventDefault();
     const li = document.createElement('li');
     const inputValue = input.value;
-    li.innerText = inputValue;
-    ul.appendChild(li);
+    const empty = document.getElementById('emptyWarning');
+    if(inputValue){
+        li.innerText = inputValue;
+        ul.appendChild(li);
+        empty.style.display = 'none';
+    }else {
+       if(empty.style.display === 'none') empty.style.display = 'block';
+    }
     input.value = '';
     li.addEventListener('click', () => {
         li.classList.toggle('checked');
     }, false);
+
 }, false);

@@ -4,8 +4,8 @@ body{
 
 main {
     background-color: white;
-    width: 60%;
     position: relative;
+    max-width: 600px;
     top: 200px;
     margin: auto;
     padding: 25px;
@@ -44,6 +44,10 @@ form button:hover{
 
 form button:active{
     transform: scale(0.95);
+}
+
+#emptyWarning{
+    color:red;
 }
 
 section ul {
