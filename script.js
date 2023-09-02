@@ -10,13 +10,21 @@ button.addEventListener('click', e => {
     span.innerHTML = '&#10060;';
     const empty = document.getElementById('emptyWarning');
     const computedStyle = window.getComputedStyle(empty);
-    if (inputValue) {
+    const dupe = document.getElementById('duplicateWarning');
+    const computedDupeStyle = window.getComputedStyle(empty);
+    if (inputValue && !duplicate(inputValue)) {
         li.innerText = inputValue;
         li.appendChild(span);
         ul.appendChild(li);
         empty.style.display = 'none';
-    } else {
+        dupe.style.display = 'none';
+    }else if(duplicate(inputValue)){
+        if (computedDupeStyle.getPropertyValue('display') === 'none') dupe.style.display = 'block';
+        console.log("Already there!")
+    }else {
         if (computedStyle.getPropertyValue('display') === 'none') empty.style.display = 'block';
+        dupe.style.display = 'none';
+
     }
     input.value = '';
     saveData();
@@ -31,6 +39,20 @@ ul.addEventListener('click', (e) => {
         saveData();
     }
 }, false);
+
+function duplicate(inputValue){
+    const li = document.querySelectorAll('li');
+    if(li.length !== 0){
+        const span = li[0].querySelector('span').textContent;
+        inputValue += span;
+        for(let i=0; i<li.length; i++){
+            if (inputValue === li[i].textContent){
+                return true;
+            }
+        }
+    }
+    return false;
+}
 
 function saveData(){
     localStorage.setItem('todos', ul.innerHTML);
