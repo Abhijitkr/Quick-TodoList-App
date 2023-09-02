@@ -48,6 +48,7 @@ form button:active{
 
 #emptyWarning{
     color:red;
+    display:none;
 }
 
 section ul {

@@ -5,18 +5,27 @@ const ul = document.querySelector('ul');
 button.addEventListener('click', e => {
     e.preventDefault();
     const li = document.createElement('li');
-    const inputValue = input.value;
+    const inputValue = input.value.trim();
     const empty = document.getElementById('emptyWarning');
+    const computedStyle = window.getComputedStyle(empty);
     if(inputValue){
         li.innerText = inputValue;
         ul.appendChild(li);
         empty.style.display = 'none';
     }else {
-       if(empty.style.display === 'none') empty.style.display = 'block';
+        if(computedStyle.getPropertyValue('display') === 'none') empty.style.display = 'block';
     }
     input.value = '';
     li.addEventListener('click', () => {
         li.classList.toggle('checked');
     }, false);
-
 }, false);
+
+// function saveData(){
+//     localStorage.setItem('todos', ul.innerHTML);
+// }
+
+// (function getData(){
+//     var test = ul.innerHTML = localStorage.getItem('todos');
+//     console.log(test);
+// })();
