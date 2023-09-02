@@ -16,6 +16,7 @@ h2{
 form{
     display: flex;
     background-color: #A7EDE7;
+    margin-bottom: 15px;
 }
 form input{
     width: 100%;
@@ -51,15 +52,16 @@ section ul {
 
 section ul li{
     list-style: none;
-    padding: 5px;
+    padding: 10px;
     margin: 5px;
     display: flex;
 }
 
 section ul li:hover{
-    border: 2px solid #45CFDD;
     transform: scale(1.02);
     cursor: pointer;
+    border: 1px solid #45CFDD;
+    transition: transform 0.2s ease-in-out; 
 }
 
 li::before{
