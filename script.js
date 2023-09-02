@@ -16,16 +16,20 @@ button.addEventListener('click', e => {
         if(computedStyle.getPropertyValue('display') === 'none') empty.style.display = 'block';
     }
     input.value = '';
-    li.addEventListener('click', () => {
-        li.classList.toggle('checked');
-    }, false);
+    saveData();
 }, false);
 
-// function saveData(){
-//     localStorage.setItem('todos', ul.innerHTML);
-// }
+ul.addEventListener('click', (e) => {
+    if(e.target.tagName === 'LI'){
+        e.target.classList.toggle('checked');
+        saveData();
+    }
+}, false);
 
-// (function getData(){
-//     var test = ul.innerHTML = localStorage.getItem('todos');
-//     console.log(test);
-// })();
+function saveData(){
+    localStorage.setItem('todos', ul.innerHTML);
+}
+
+(function getData(){
+    var test = ul.innerHTML = localStorage.getItem('todos');
+})();
