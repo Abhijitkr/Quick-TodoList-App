@@ -1,0 +1,32 @@
+body{
+    background: linear-gradient(0.25turn, #9681EB, #6527BE);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    background-color: #45CFDD;
+    width: 60%;
+    position: relative;
+    top: 200px;
+}
+h2{
+    text-align: center;
+}
+form{
+    display: flex;
+}
+form input{
+    width: 100%;
+}
+
+section ul {
+    all: unset;
+}
+section ul li{
+    background-color: #A7EDE7;
+    list-style: none;
+    padding: 5px;
+    margin: 5px;
+}
