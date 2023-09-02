@@ -1,36 +1,55 @@
 body{
     background: linear-gradient(0.25turn, #9681EB, #6527BE);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 main {
-    background-color: #45CFDD;
+    background-color: white;
     width: 60%;
     position: relative;
     top: 200px;
+    margin: auto;
+    padding: 25px;
 }
 h2{
     text-align: center;
 }
 form{
     display: flex;
+    background-color: #A7EDE7;
 }
 form input{
-    border-radius: 20px;
     width: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    outline:none;
 }
 
+form input:hover, form input:focus{
+    border: 2px solid #45CFDD;
+}
+
+
 form button{
-    border-radius: 20px;
+    width: 150px;
+    height: 40px;
+    background-color: #45CFDD;
+    border: none;
+}
+
+form button:hover{
+    border: 2px solid #45CFDD;
+}
+
+form button:active{
+    transform: scale(0.95);
 }
 
 section ul {
     all: unset;
 }
+
 section ul li{
-    background-color: #A7EDE7;
     list-style: none;
     padding: 5px;
     margin: 5px;
