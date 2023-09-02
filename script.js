@@ -5,23 +5,29 @@ const ul = document.querySelector('ul');
 button.addEventListener('click', e => {
     e.preventDefault();
     const li = document.createElement('li');
+    const span = document.createElement('span');
     const inputValue = input.value.trim();
+    span.innerHTML = '&#10060;';
     const empty = document.getElementById('emptyWarning');
     const computedStyle = window.getComputedStyle(empty);
-    if(inputValue){
+    if (inputValue) {
         li.innerText = inputValue;
+        li.appendChild(span);
         ul.appendChild(li);
         empty.style.display = 'none';
-    }else {
-        if(computedStyle.getPropertyValue('display') === 'none') empty.style.display = 'block';
+    } else {
+        if (computedStyle.getPropertyValue('display') === 'none') empty.style.display = 'block';
     }
     input.value = '';
     saveData();
 }, false);
 
 ul.addEventListener('click', (e) => {
-    if(e.target.tagName === 'LI'){
+    if (e.target.tagName === 'LI') {
         e.target.classList.toggle('checked');
+        saveData();
+    }else if(e.target.tagName === 'SPAN'){
+        e.target.parentElement.remove();
         saveData();
     }
 }, false);

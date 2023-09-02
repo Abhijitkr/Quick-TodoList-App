@@ -54,6 +54,7 @@ form button:active{
 section ul {
     all: unset;
     font-size: 18px;
+    position: relative;
 }
 
 section ul li{
@@ -86,4 +87,9 @@ li.checked{
 li.checked::before{
     background-image: url('/images/checked.png');
     filter: hue-rotate(180deg);
+}
+
+ul li span{
+    position: absolute;
+    right: 10px;
 }
