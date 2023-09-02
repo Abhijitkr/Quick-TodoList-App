@@ -18,7 +18,12 @@ form{
     display: flex;
 }
 form input{
+    border-radius: 20px;
     width: 100%;
+}
+
+form button{
+    border-radius: 20px;
 }
 
 section ul {
@@ -29,4 +34,14 @@ section ul li{
     list-style: none;
     padding: 5px;
     margin: 5px;
+    display: flex;
+}
+
+li::before{
+    content: "";
+    background-image: url('/images/unchecked.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
