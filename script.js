@@ -69,5 +69,5 @@ function saveData(){
 }
 
 (function getData(){
-    var test = ul.innerHTML = localStorage.getItem('todos'); // invoke itself to get the saved values {Immediately Invoked Function Expression (IIFE)}
+    ul.innerHTML = localStorage.getItem('todos'); // invoke itself to get the saved values {Immediately Invoked Function Expression (IIFE)}
 })();
