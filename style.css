@@ -10,9 +10,16 @@ main {
     margin: auto;
     padding: 25px;
 }
-h2{
-    text-align: center;
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+img{
+    margin-left: 5px;
+}
+
 form{
     display: flex;
     background-color: #A7EDE7;
