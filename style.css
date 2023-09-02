@@ -80,7 +80,7 @@ section ul li:hover{
 
 li::before{
     content: "";
-    background-image: url('/images/unchecked.png');
+    background-image: url('images/unchecked.png');
     background-size: cover;
     width: 20px;
     height: 20px;
@@ -92,7 +92,7 @@ li.checked{
 }
 
 li.checked::before{
-    background-image: url('/images/checked.png');
+    background-image: url('images/checked.png');
     filter: hue-rotate(180deg);
 }
 
