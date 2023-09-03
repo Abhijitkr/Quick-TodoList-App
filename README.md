@@ -4,6 +4,9 @@
 
 This is a simple and stylish Todo List web application that allows you to manage your tasks quickly and efficiently. You can add new tasks, mark them as completed, and delete them as needed. The app also provides user-friendly warnings for empty tasks and duplicates.
 
+## Watch Video
+[![Practicing JavaScript | Quick Todo List App | Efficient Task Management Web Application](https://i9.ytimg.com/vi_webp/JwsqQmLSHDI/mq2.webp?sqp=CMiO06cG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGE4gNih_MA8=&rs=AOn4CLDBi2zs1HUk6gw6N-spTwviw7jUAA)](https://youtu.be/JwsqQmLSHDI)
+
 ## Live Demo
 
 You can try the Quick Todo List App live [here](https://abhijitkr.github.io/Quick-TodoList-App/).
