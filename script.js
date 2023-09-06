@@ -7,6 +7,7 @@ button.addEventListener('click', e => {
     const li = document.createElement('li');
     const span = document.createElement('span');
     const inputValue = input.value.trim(); // removes space if any
+    const dupCheck = duplicate(inputValue);
     span.innerHTML = '&#10060;'; // unicode for cross/delete icon
 
     const empty = document.getElementById('emptyWarning');
@@ -15,7 +16,7 @@ button.addEventListener('click', e => {
     const dupe = document.getElementById('duplicateWarning');
     const computedDupeStyle = window.getComputedStyle(dupe); // getting computed style(includes external css styling)
 
-    if (inputValue && !duplicate(inputValue)) { // checks for empty and duplication
+    if (inputValue && !dupCheck) { // checks for empty and duplication
         li.innerText = inputValue; // adds value to list
         li.appendChild(span); // adds cross/delete icon
         ul.appendChild(li); // adds list to ul
@@ -24,7 +25,7 @@ button.addEventListener('click', e => {
         empty.style.display = 'none';
         dupe.style.display = 'none';
 
-    }else if(duplicate(inputValue)){ //checking for duplication
+    }else if(dupCheck){ //checking for duplication
         if (computedDupeStyle.getPropertyValue('display') === 'none') dupe.style.display = 'block'; //checking computed display value and changing for duplication validation
         empty.style.display = 'none'; // clearing empty warning
     }else {
@@ -68,6 +69,6 @@ function saveData(){
     localStorage.setItem('todos', ul.innerHTML); // saves to local storage
 }
 
-(function getData(){
+(function(){
     ul.innerHTML = localStorage.getItem('todos'); // invoke itself to get the saved values {Immediately Invoked Function Expression (IIFE)}
 })();

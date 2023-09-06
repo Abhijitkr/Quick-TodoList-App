@@ -43,6 +43,7 @@ form button{
     height: 45px;
     background-color: #45CFDD;
     border: none;
+    outline: none;
 }
 
 form button:hover{
